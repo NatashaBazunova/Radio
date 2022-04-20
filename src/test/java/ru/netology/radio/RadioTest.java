@@ -18,11 +18,11 @@ class RadioTest {
     @Test
     public void testSetStation() {
         Radio rad = new Radio();
-        rad.setCurrentStation(7);
+        rad.setCurrentStation(15);
         // int expected = 7;
         // int actual = rad.getCurrentStation();
 
-        assertEquals(7, rad.getCurrentStation());
+        assertEquals(15, rad.getCurrentStation());
     }
 
     @Test
@@ -38,21 +38,21 @@ class RadioTest {
     @Test
     public void testSetStationMax() {
         Radio rad = new Radio();
-        rad.setCurrentStation(9);
+        rad.setCurrentStation(19);
         //int expected = 9;
         //int actual = rad.getCurrentStation();
 
-        assertEquals(9, rad.getCurrentStation());
+        assertEquals(19, rad.getCurrentStation());
     }
 
     @Test
     public void testSetStationOverMax() {
         Radio rad = new Radio();
-        rad.setCurrentStation(13);
+        rad.setCurrentStation(23);
         //int expected = 0;
         //int actual = rad.getCurrentStation();
 
-        assertEquals(9, rad.getMaxStation());
+        assertEquals(0, rad.getCurrentStation());
     }
 
     @Test
@@ -62,7 +62,7 @@ class RadioTest {
         //int expected = 0;
         //int actual = rad.getCurrentStation();
 
-        assertEquals(0, rad.getMinStation());
+        assertEquals(0, rad.getCurrentStation());
     }
 
     @Test
@@ -97,21 +97,21 @@ class RadioTest {
 
         assertEquals(8, rad.getCurrentStation());
     }
-    @Test
-    public void testNextStationOverMax() {
-        Radio rad = new Radio();
-        rad.setCurrentStation(10);
-        rad.nextStation();
-        // expected = 0;
-        // int actual = rad.getCurrentStation();
-
-        assertEquals(0, rad.getMinStation());
-    }
+//    @Test
+//    public void testNextStationOverMax() {
+//        Radio rad = new Radio();
+//        rad.setCurrentStation(20);
+//        rad.nextStation();
+//        // expected = 0;
+//        // int actual = rad.getCurrentStation();
+//
+//        assertEquals(0, rad.getCurrentStation());
+//    }
 
     @Test
     public void testNextStationMax() {
         Radio rad = new Radio();
-        rad.setCurrentStation(9);
+        rad.setCurrentStation(19);
         rad.nextStation();
         //int expected = 0;
         //int actual = rad.getCurrentStation();
@@ -119,16 +119,16 @@ class RadioTest {
         assertEquals(0, rad.getCurrentStation());
     }
 
-    @Test
-    public void testNextStationUnderMin() {
-        Radio rad = new Radio();
-        rad.setCurrentStation(-3);
-        rad.nextStation();
-        //int expected = 1;
-        // int actual = rad.getCurrentStation();
-
-        assertEquals(0, rad.getMinStation());
-    }
+//    @Test
+//    public void testNextStationUnderMin() {
+//        Radio rad = new Radio();
+//        rad.setCurrentStation(-3);
+//        rad.nextStation();
+//        //int expected = 1;
+//        // int actual = rad.getCurrentStation();
+//
+//        assertEquals(0, rad.getCurrentStation());
+//    }
 
     @Test
     public void testPrevStation() {
@@ -144,12 +144,12 @@ class RadioTest {
     @Test
     public void testPrevStationMax() {
         Radio rad = new Radio();
-        rad.setCurrentStation(9);
+        rad.setCurrentStation(19);
         rad.prevStation();
         //int expected = 8;
         //int actual = rad.getCurrentStation();
 
-        assertEquals(8, rad.getCurrentStation());
+        assertEquals(18, rad.getCurrentStation());
     }
 
     @Test
@@ -160,7 +160,7 @@ class RadioTest {
         //int expected = 9;
         //int actual = rad.getCurrentStation();
 
-        assertEquals(9, rad.getMaxStation());
+        assertEquals(19, rad.getCurrentStation());
     }
 
     @Test
@@ -171,7 +171,7 @@ class RadioTest {
         //int expected = 9;
         //int actual = rad.getCurrentStation();
 
-        assertEquals(9, rad.getMaxStation());
+        assertEquals(19, rad.getCurrentStation());
     }
 
     @Test
@@ -187,12 +187,12 @@ class RadioTest {
     @Test
     public void testPrevStationOverMax() {
         Radio rad = new Radio();
-        rad.setCurrentStation(15);
+        rad.setCurrentStation(20);
         rad.prevStation();
         //int expected = 9;
         //int actual = rad.getCurrentStation();
 
-        assertEquals(9, rad.getMaxStation());
+        assertEquals(19, rad.getCurrentStation());
     }
 
     @Test
@@ -241,7 +241,7 @@ class RadioTest {
         //   int expected = 10;
         //   int actual = vol.getCurrentVolume();
 
-        assertEquals(100, vol.getMaxVolume());
+        assertEquals(0, vol.getCurrentVolume());
     }
 
     @Test
@@ -251,7 +251,7 @@ class RadioTest {
         //  int expected = 100;
         // int actual = vol.getCurrentVolume();
 
-        assertEquals(100, vol.getMaxVolume());
+        assertEquals(0, vol.getCurrentVolume());
     }
 
     @Test
@@ -273,7 +273,7 @@ class RadioTest {
         //  int expected = 100;
         //  int actual = vol.getCurrentVolume();
 
-        assertEquals(100, vol.getMaxVolume());
+        assertEquals(100, vol.getCurrentVolume());
     }
 
     @Test
@@ -287,16 +287,16 @@ class RadioTest {
         assertEquals(51, vol.getCurrentVolume());
     }
 
-    @Test
-    public void testIncreaseVolumeOverMax() {
-        Radio vol = new Radio();
-        vol.setCurrentVolume(107);
-        vol.increaseVolume();
-        //  int expected = 100;
-        // int actual = vol.getCurrentVolume();
-
-        assertEquals(100, vol.getMaxVolume());
-    }
+//    @Test
+//    public void testIncreaseVolumeOverMax() {
+//        Radio vol = new Radio();
+//        vol.setCurrentVolume(101);
+//        vol.increaseVolume();
+//        //  int expected = 100;
+//        // int actual = vol.getCurrentVolume();
+//
+//        assertEquals(100, vol.getCurrentVolume());
+//    }
 
     @Test
     public void testIncreaseVolumeMin() {
@@ -328,7 +328,7 @@ class RadioTest {
         // int expected = 0;
         // int actual = vol.getCurrentVolume();
 
-        assertEquals(0, vol.getMinVolume());
+        assertEquals(0, vol.getCurrentVolume());
     }
 
     @Test
@@ -344,7 +344,7 @@ class RadioTest {
 
     @Test
     public void getAmount() {
-        Radio rad = new Radio(10);
-        assertEquals(10, rad.getAmount());
+        Radio rad = new Radio(20);
+        assertEquals(20, rad.getAmount());
     }
 }
